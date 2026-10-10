@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Logotipo de NICATEK">
+  <title>NICATEK — icono</title>
+
+  <!--
+    Icono de la marca.
+
+    El degradado y la proporcion salen de la app, no de un tanteo: la pantalla
+    de bienvenida pinta el cuadro con [accent, primary] en diagonal, es decir
+    #FFB347 -> #A11E38, y el radio del cuadro es el 28,5% de su lado (56 px de
+    caja con 16 de radio). Aqui esta a 512 px para que sirva de icono de
+    aplicacion sin reescalar: 512 * 0,285 = 146.
+  -->
+
+  <defs>
+    <linearGradient id="marca" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#FFB347"/>
+      <stop offset="100%" stop-color="#A11E38"/>
+    </linearGradient>
+
+    <!-- Sombra suave, la misma idea que la elevacion del cuadro en la app. -->
+    <filter id="sombra" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="14" stdDeviation="22" flood-color="#A11E38" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect x="16" y="16" width="480" height="480" rx="146" ry="146"
+        fill="url(#marca)" filter="url(#sombra)"/>
+
+  <!--
+    La N va como trazado y no como texto: un <text> depende de que la fuente
+    exista en el equipo que abra el archivo, y en un logo eso significa que en
+    otra maquina salga con otra letra. Dibujada, es siempre la misma.
+
+    Trazo de 62 px, cortes en angulo recto y diagonal continua: la misma N
+    compacta y pesada que se ve en la app.
+  -->
+  <path fill="#FFFFFF" d="
+    M 136 148
+    L 200 148
+    L 312 294
+    L 312 148
+    L 376 148
+    L 376 364
+    L 312 364
+    L 200 218
+    L 200 364
+    L 136 364
+    Z"/>
+</svg>

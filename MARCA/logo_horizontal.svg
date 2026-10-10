@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 320" width="780" height="320" role="img" aria-label="NICATEK — tu tienda, sin límites">
+  <title>NICATEK — logotipo horizontal</title>
+
+  <!--
+    El cuadro ES la N: a continuacion va "ICATEK", no "NICATEK". Asi lo dibujan
+    el inicio de sesion, la bienvenida y el registro.
+
+    Medidas revisadas tras ver el render. Fallaban tres cosas:
+      · el lema arrancaba a la altura del cuadro y se le metia debajo;
+      · el espaciado entre letras era tan grande que la palabra se desparramaba
+        y dejaba de leerse como una pieza;
+      · el conjunto no tenia una linea de apoyo comun.
+
+    Ahora el cuadro y la palabra comparten centro optico, el lema cuelga del
+    borde inferior con aire suficiente, y el espaciado baja de 24 a 10 para que
+    "ICATEK" pese como una palabra y no como seis letras sueltas.
+  -->
+
+  <defs>
+    <linearGradient id="marca" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#FFB347"/>
+      <stop offset="100%" stop-color="#A11E38"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Cuadro con la N. Lado 190; el radio mantiene el 28,5% de la app. -->
+  <g transform="translate(30, 34) scale(0.371)">
+    <rect x="0" y="0" width="512" height="512" rx="146" ry="146" fill="url(#marca)"/>
+    <!--
+      N dibujada como trazado, no como texto: asi no depende de que la fuente
+      exista en el equipo que abra el archivo. Astas de 64 y diagonal continua,
+      para que pese lo mismo que la Arial negrita de al lado.
+    -->
+    <path fill="#FFFFFF" d="
+      M 136 148
+      L 200 148
+      L 312 294
+      L 312 148
+      L 376 148
+      L 376 364
+      L 312 364
+      L 200 218
+      L 200 364
+      L 136 364
+      Z"/>
+  </g>
+
+  <!--
+    "ICATEK" como texto real con pila de fuentes seguras. En el icono la N va
+    dibujada porque es la marca; la palabra puede permitirse Arial —la misma
+    del informe— y asi sigue siendo seleccionable dentro del documento.
+
+    La linea base cae en el centro optico del cuadro: 34 + 190/2 + altura de
+    mayuscula/2.
+  -->
+  <text x="232" y="172"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="108" font-weight="800" letter-spacing="10"
+        fill="#1A1A1A">ICATEK</text>
+
+  <!-- El lema cuelga del conjunto entero, con aire por debajo del cuadro. -->
+  <text x="34" y="268"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="23" font-weight="500" letter-spacing="7"
+        fill="#6B6B70">TU TIENDA, SIN LÍMITES</text>
+</svg>
